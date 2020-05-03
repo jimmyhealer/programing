@@ -192,6 +192,10 @@ a:focus {
   font-size: 16px;
 }
 
+.navbar .navbar-toggler:focus {
+  outline: none;
+}
+
 .navbar a span {
   font-weight: 400;
   font-size: 1.3em;
