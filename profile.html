@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>普羅學習網 | Programing &amp; 普羅程式教育</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.jpg">
+
+    <!-- Stylesheet -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="css/lib.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+</head>
+
+<body profile='true'>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <nav class="navbar navbar-meau navbar-expand-md navbar-light fixed-top ">
+        <a href="index.html" class="nav-link mr-auto">
+            <span class="navbar-brand">
+                <img id="" src="img/logo.jpg" width="60" height="60" />
+                Programing | 普羅程式教育
+            </span>
+        </a>
+        <button class="navbar-toggler mr10" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="source.html">課程</a></li>
+                <li class="nav-item"><a class="nav-link" href="forum.html">論壇</a></li>
+            </ul>
+            <div id="navLogin" class="mr30">
+                <a href="login.html">
+                    <button class="btn btn-primary">登入</button>
+                </a>
+            </div>
+            <div id='navProfile' class="nav-profile">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="##" id="navUserName" data-toggle="dropdown"
+                        style="color: black;">
+                        用戶
+                    </a>
+                    <div class="border-0 shadow dropdown-menu dropdown-menu-left">
+                        <a class="dropdown-item" href="profile.html?1">個人資料</a>
+                        <a class="dropdown-item" href="profile.html?2">我的課程</a>
+                        <a class="dropdown-item" href="profile.html?3">收件匣</a>
+                        <a class="dropdown-item" href="index.html" id="signOut">登出</a>
+                    </div>
+                </div>
+                <div class="userthumb mr30">
+                    <img id="userphoto" src="img/logo.jpg" width="40" height="40" />
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Blog Area Start ##### -->
+    <section class="blog-area blog-page ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="blog-catagories d-flex flex-wrap justify-content-center">
+                        <div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc1.jpg);">
+                            <a href="javascript:showprofile(1)">
+                                <h6>個人資料</h6>
+                            </a>
+                        </div>
+                        <div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc2.jpg);">
+                            <a href="javascript:showprofile(2)">
+                                <h6>我的課程</h6>
+                            </a>
+                        </div>
+                        <div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc3.jpg);">
+                            <a href="javascript:showprofile(3)">
+                                <h6>收件匣</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div name='pf' id="pf_1" class="col-12 single-blog-area animated fadeInUp">
+                        <div class="blog-content">
+                            <a href="##" class="blog-headline">
+                                <h4>個人資料</h4>
+                            </a>
+                            <div class="container-fluid">
+                                <form class="form-horizontal" method="post" action="#" name="basic_validate"
+                                    id="basic_validate" novalidate="novalidate">
+                                    <div class="row">
+                                        <div class=" col-lg-4 d-flex justify-content-center align-items-center ">
+                                            <div class="img_content">
+                                                <input id='file' style="display: none;" type="file"
+                                                    accept="image/png, image/jpeg" />
+                                                <button type="button" onclick="file.click()" class="mask">換照片</button>
+                                                <img class="img-circle" id="pf_photo" src="img/logo.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="mt-3 mt-lg-0 col-12 col-lg-5 form-group">
+                                            <div class="control-group mt-15 ">
+                                                <div class="d-inline-flex">
+                                                    <label class="control-label mr-30">你的信箱
+                                                        (無法修改)</label>
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" type="text" name="email" id="pf_email"
+                                                        disabled>
+                                                </div>
+                                            </div>
+                                            <div class="control-gro">
+                                                <div class="d-inline-flex">
+                                                    <label class="control-label">你的名字<b
+                                                            style="color: red;">*</b></label>
+                                                    <p id='namenull' class="control-label ml15"
+                                                        style="display: none;font-weight: bolder; color: red;">
+                                                        名字不能為空</p>
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" id="pf_username" type="text"
+                                                        name="required" id="required" disabled>
+                                                </div>
+                                            </div>
+                                            <div id='div_oldpwd' class="control-grou" style="display: none;">
+                                                <div class="d-inline-flex">
+                                                    <label class="control-label mr30">舊密碼<b
+                                                            style="color: red;">*</b></label>
+                                                    <a class="control-label" id='ud_pwd' href="##"
+                                                        style="color: red;">修改密碼</a>
+                                                    <p id='pwderror' class="control-label ml-15"
+                                                        style="display: none;font-weight: bolder; color: red;">
+                                                        密碼錯誤</p>
+                                                    <p id='pwdnull' class="control-label ml-15"
+                                                        style="display: none;font-weight: bolder; color: red;">
+                                                        密碼不能為空</p>
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" id="pf_oldpwd" type="password"
+                                                        name="required">
+                                                </div>
+                                            </div>
+                                            <div id='div_newpwd' class="control-grou" style="display: none;">
+                                                <div class=" d-inline-flex">
+                                                    <label class="control-label mr-30">新密碼</label>
+                                                    <p id='pwdlittle' class="control-label ml-15"
+                                                        style="display: none;font-weight: bolder; color: red;margin-left: 3px;">
+                                                        密碼要大於6位</p>
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" id="pf_newpwd" type="password"
+                                                        name="required">
+                                                </div>
+                                            </div>
+                                            <div class="form-actions col-12 col-lg-6 justify-content-center"
+                                                style="margin: 15px auto 0px;">
+                                                <button id='pf_btn' type="button" value="修改"
+                                                    class="btn btn-primary btn-block" style="width: 100% !important;">
+                                                    <span id='loading' class="spinner-border spinner-border-sm"
+                                                        role="status" aria-hidden="true" style="display: none;"></span>
+                                                    修改
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- <d class="col-lg-4"></d> -->
+                                </form>
+                                <div id='update_ph' class="col-lg-4" style="display: none;">
+                                    <div class="progress">
+                                        <div id='progress_bar'
+                                            class="progress-bar progress-bar-striped progress-bar-animated"
+                                            style="width: 0%;"></div>
+                                    </div>
+                                    <p style="text-align: center; font-size:larger;">上傳中</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Blog Area -->
+                <div name='pf' id="pf_2" class="col-12" style="display: none;">
+                    <div class="d-flex single-blog-area mb-100 animated fadeInUp justify-content-center">
+                        <!-- Blog Content -->
+                        <div class="col-lg-6 d-inline-block">
+                            <div class="blog-content align-items-center">
+                                <a href="##" class="blog-headline">
+                                    <h4>未開始的課程</h4>
+                                </a>
+                                <ul class="list-group">
+                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action">Python
+                                        課程</a>
+                                    <a id='not_lesson_1' href="##"
+                                        class="list-group-item list-group-item-action">Scratch
+                                        課程</a>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="blog-content align-items-center">
+                                <a href="##" class="blog-headline">
+                                    <h4>正在開始的課程</h4>
+                                </a>
+                                <ul class="list-group">
+                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
+                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="blog-content align-items-center">
+                                <a href="##" class="blog-headline">
+                                    <h4>已過去的課程</h4>
+                                </a>
+                                <ul class="list-group">
+                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
+                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Single Blog Area -->
+                <div name='pf' id="pf_3" class="col-12" style="display: none;">
+                    <div class="single-blog-area mb-100 animated  fadeInUp">
+                        <img src="img/blog-img/3.jpg" alt="" style="width: 100%;">
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <a href="##" class="blog-headline">
+                                <h4>收件匣</h4>
+                            </a>
+
+                            <p>施工中，敬請期待</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Blog Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Top Footer Area -->
+        <div class="top-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Footer Logo -->
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="img/logo.jpg" alt="" width="60" height="60" /></a>
+                        </div>
+                        <!-- Copywrite -->
+                        <p class="mt15">
+                            Copyright &copy; 2020 &mdash; Programing 普羅程式教育
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main1.js"></script>
+</body>
+
+</html>
