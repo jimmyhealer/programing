@@ -16,9 +16,11 @@
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="css/lib.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css">
 </head>
 
 <body home='true'>
@@ -41,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="source.html">課程</a></li>
+                <li class="nav-item"><a class="nav-link" href="cources.html">課程</a></li>
                 <li class="nav-item"><a class="nav-link" href="forum.html">論壇</a></li>
             </ul>
             <div id="navLogin" class="mr30">
@@ -105,24 +107,118 @@
                 <div class="about-img2 animated-box shadow-lg" style="background-image: url(img/bg-img/c6.jpg);">
                 </div>
             </div>
+            <div class="col-lg-6">
+                <h2>Lorem, ipsum dolor.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, atque quam eligendi tempora ipsum
+                    sunt
+                    beatae ab at aspernatur officia id debitis provident quaerat impedit ullam aliquam eaque voluptates
+                    libero.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container home-cources">
+                <h2>課程</h2>
+                <div id="homeCources" class="gallery js-flickity" data-flickity='{"imagesLoaded": true ,"selectedAttraction": 0.01,
+                "friction": 0.15}'>
+                    <div class="gallery-cell learn-list">
+                        <a href="learn.html?python">
+                            <div class="card shadow mb-2">
+                                <img src="https://picsum.photos/800/500/?random=1652" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">Python</h5>
+                                    <p class="card-text">
+                                        甚麼是python ?<br>
+                                        <code>print('hello world')</code>
+                                        這就是Python<br>
+                                        Sed elementum lacus a risus luctus suscipit. Aenean sollicitudin sapien neque,
+                                        in
+                                        fermentum
+                                        lorem dignissim a. Nullam eu mattis quam. Donec porttitor nunc a diam molestie
+                                        blandit.
+                                        Maecenas
+                                        quis ultrices ex.</p>
+                                    <div class="foot">
+                                        <div class="people">
+                                            <p><i class="fal fa-users mr-1"></i>40</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div class="gallery-cell learn-list">
+                        <a href="learn.html?scratch">
+                            <div class="card shadow mb-2">
+                                <img src="https://picsum.photos/800/500/?random=12" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">Scratch</h5>
+                                    <p class="card-text">甚麼是Scratch ?<br>
+                                        Scratch
+                                        這就是Scratch<br>
+                                        Sed elementum lacus a risus luctus suscipit. Aenean sollicitudin sapien neque,
+                                        in
+                                        fermentum
+                                        lorem dignissim a. Nullam eu mattis quam. Donec porttitor nunc a diam molestie
+                                        blandit.
+                                        Maecenas
+                                        quis ultrices ex.</p>
+                                    <div class="foot">
+                                        <div class="people">
+                                            <p><i class="fal fa-users mr-1"></i>40</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <!-- Top Footer Area -->
         <div class="top-footer-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
+                <div class="row" style="color: #fff;">
+                    <div class="col-12 col-lg-2">
                         <!-- Footer Logo -->
                         <div class="footer-logo">
                             <a href="index.html##"><img src="img/logo.jpg" alt="" width="60" height="60" /></a>
                         </div>
                         <!-- Copywrite -->
                         <p class="mt15">
-                            Copyright &copy; 2020 &mdash; Programing 普羅程式教育
+                            Copyright &copy; 2020 Programing
                         </p>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <a href="##" class="footer-head" style="display: block;">普羅教育</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <a href="##" class="footer-head" style="display: block;">普羅教育</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <a href="##" class="footer-head" style="display: block;">普羅教育</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <a href="##" class="footer-head" style="display: block;">普羅教育</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
+                        <a href="##" class="footer-item" style="display: block;">lorem</a>
                     </div>
                 </div>
             </div>
@@ -133,7 +229,9 @@
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/fontawsome.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>

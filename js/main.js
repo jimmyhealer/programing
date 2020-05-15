@@ -1,4 +1,5 @@
 $(function () {
+    var body = $('body');
 
     // flexslider
     if ($.fn.flexslider)
@@ -29,6 +30,22 @@ $(function () {
         });
     }
 
+    // autoSize
+    try {
+        autosize($('textarea'));
+    } catch{ }
+
+    // profile item
+    if (body.attr('profile')) {
+        var src = /^[1-3]{1}$/.test(location.search.split("?")[1]);
+        if (src)
+            showprofile(location.search.split("?")[1]);
+    }
+
+    // forum image
+    $('.forum-img:nth-child(4)').prev().css('grid-column', 'span 1');
+    $('.f-img>.forum-img:nth-child(5)').parent().next().addClass('more');
+
 
     //login 
     if ($.fn.validate)
@@ -58,7 +75,7 @@ $(function () {
     //logout
     $("#signOut").click(function () {
         firebase.auth().signOut();
-        location.replace("index.html");
+        // location.replace("index.html");
     });
 
 
@@ -239,6 +256,7 @@ function showprofile(i) {
     var be = $("div[name='pf']:visible");
     be.hide();
     $("#pf_" + i).show();
+    window.history.pushState({}, 0, 'http://' + window.location.host + '/profile.html?' + i);
 }
 
 

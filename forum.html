@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="source.html">課程</a></li>
+                <li class="nav-item"><a class="nav-link" href="cources.html">課程</a></li>
                 <li class="nav-item"><a class="nav-link" href="##">論壇</a></li>
             </ul>
             <div id="navLogin" class="mr30">
@@ -73,9 +73,9 @@
 
     <div class="container forum shadow">
         <div class="forum-profile">
-            <img src="https://picsum.photos/48/48/?random=1">
+            <img class="showpf" src="https://picsum.photos/48/48/?random=1">
             <div class="p1 mr-auto">
-                <p class="forum-name">name</p>
+                <p name="name" class="forum-name showpf">name</p>
                 <div class="p2">
                     <p class="forum-date">2020/5/1</p>
                     <a href="">
@@ -92,12 +92,24 @@
                 是驚不麼我朋職！公克灣濟說外你大：計達路去。
                 電名話下書！親謝有顧動面。德晚賽場會物然業上住阿都時的面故方當環另了送。受我奇動麼路
             </p>
-            <div class="f-img">
-                <img src="https://picsum.photos/200/200/?random=2">
-                <img src="https://picsum.photos/200/200/?random=3">
-                <img src="https://picsum.photos/200/200/?random=23">
-                <img src="https://picsum.photos/200/200/?random=33">
-
+            <div class="fprev">
+                <div class="f-img">
+                    <div class="forum-img" style="background-image: url(https://picsum.photos/782/600/?random=2);">
+                    </div>
+                    <div class="forum-img" style="background-image: url(https://picsum.photos/782/600/?random=3);">
+                    </div>
+                    <div class="forum-img" style="background-image: url(https://picsum.photos/782/600/?random=23);">
+                    </div>
+                    <!-- <div class="forum-img" style="background-image: url(https://picsum.photos/782/600/?random=33);">
+                    </div>
+                    <div class="forum-img" style="background-image: url(https://picsum.photos/782/600/?random=33);">
+                    </div>
+                    <div class="forum-img" style="background-image: url(https://picsum.photos/782/600/?random=33);">
+                    </div> -->
+                </div>
+                <div class="forum-more">
+                    <p>更多</p>
+                </div>
             </div>
             <div class="f-good">
                 <button class="forum-good f-btn"><i class="fal fa-thumbs-up mr5 animated-hover "
@@ -107,9 +119,11 @@
         </div>
         <div class="forum-mg">
             <div class="forum-message">
-                <img src="https://picsum.photos/30/30/?random=3">
+                <div class="showpf">
+                    <img src="https://picsum.photos/30/30/?random=3">
+                </div>
                 <div class="mgtext">
-                    <p class="forum-mgname ml-1 mr-1">name1</p>
+                    <p name="name1" class="forum-mgname ml-1 mr-1 showpf">name1</p>
                     <p class="forum-mgcontext ml-1">Lorem ipsum dolor sit amet.<br />
                         Lorem ipsum, dolor sit amet
                         consectetur adipisicing elit.
@@ -138,6 +152,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="showprofile">
+
     </div>
 
 

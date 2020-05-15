@@ -21,33 +21,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
-<body class="text-center" login='true'>
-    <form class="form-signin">
+<body class="text-center" forgot='true'>
+    <form class="form-signin forgot">
         <img class="mb-4" src="img/logo.jpg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">登入</h1>
+        <h1 class="h3 mb-3 font-weight-normal">忘記密碼</h1>
         <label for="inputEmail" class="sr">信箱</label>
-        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required
+        <input type="email" id="forgotInputEmail" name="email" class="form-control" placeholder="Email address" required
             autofocus>
-        <label for="inputPassword" class="sr mt-2">密碼
-            <div class="forgot">
-                <a href="forgot.html">忘記密碼</a>
-            </div>
-        </label>
-        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-        <p class="pwdError" style="display: none;">信箱或密碼錯誤</p>
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> 記住我
-            </label>
-        </div>
         <!-- <button onclick="javascript:v();">test</button> -->
-        <button id='loginBtn' class="btn btn-lg btn-primary btn-block " type="">登入
+        <button id='forgotBtn' class="btn btn-lg btn-primary btn-block mt-3" type="">確認
         </button>
         <div class="spinner-border spinner-grow text-primary" role="status" style="display: none;">
             <span class="sr-only">Loading...</span>
         </div>
         <p class="mt-5 mb-3 text-muted">&copy; 2020 &mdash; Programing 普羅程式教育</p>
     </form>
+
+
+
+    <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
