@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/fontawsome.js"></script>
+    <style>
+        body {
+            display: flex;
+            overflow: hidden;
+            font-size: 24px;
+            width: 100vw;
+            /* height: 100vh; */
+            background-color: #21D4FD;
+            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+            font-family: '微軟正黑體';
+        }
+
+        .container {
+            display: flex;
+            margin: auto;
+            width: 90%;
+            height: 100vh;
+            align-items: center;
+        }
+
+        .table {
+            margin: 0 auto;
+        }
+
+        .fa-lg {
+            color: #f00;
+        }
+
+        .name {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            padding: 8px;
+            color: #fff;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table td,
+        table th {
+            height: 40px;
+        }
+
+        table th:first-child {
+            width: 70%;
+        }
+
+        table thead th {
+            background-color: #4F4E58;
+            color: #fff;
+        }
+
+        table tbody th {
+            background-color: #B5E4C2;
+        }
+
+        table thead th:first-child {
+            border-radius: 15px 0px 0px 0px;
+        }
+
+        table thead th:last-child {
+            border-radius: 0px 15px 0px 0px;
+        }
+
+        table tbody tr:last-child th:first-child {
+            border-radius: 0px 0px 0px 15px;
+        }
+
+        table tbody tr:last-child th:last-child {
+            border-radius: 0px 0px 15px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="table animated fadeInUp">
+            <div class="name">楊光照同學</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>名次</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><i class="fas fa-trophy-alt fa-lg "></i>蒜辣可樂果<i class="fas fa-trophy-alt fa-lg"></i>
+                        </th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th><i class="fad fa-star fa-lg fa-spin"></i>薯圈圈(多圈叔叔)<i class="fad fa-star fa-lg fa-spin"></i>
+                        </th>
+                        <th>2</th>
+                    </tr>
+                    <tr>
+                        <th>醬燒洋芋片</th>
+                        <th>3</th>
+                    </tr>
+                    <tr>
+                        <th>北海道起士洋芋片</th>
+                        <th>4</th>
+                    </tr>
+                    <tr>
+                        <th>牛排味洋芋片</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <th>卡迪那</th>
+                        <th>6</th>
+                    </tr>
+                    <tr>
+                        <th><i class="far fa-thumbs-up fa-flip-vertical fa-lg"></i>蝦餠</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>橫綱棒</th>
+                        <th>8</th>
+                    </tr>
+                    <tr>
+                        <th>甜卡力</th>
+                        <th>9</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table animated fadeInUp">
+            <div class="name">諾同學</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>名次</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><i class="fas fa-trophy-alt fa-lg "></i>蒜辣可樂果<i class="fas fa-trophy-alt fa-lg"></i>
+                        </th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th>卡迪那</th>
+                        <th>2</th>
+                    </tr>
+                    <tr>
+                        <th><i class="fad fa-star fa-lg fa-spin"></i>薯圈圈<i class="fad fa-star fa-lg fa-spin"></i></th>
+                        <th>3</th>
+                    </tr>
+                    <tr>
+                        <th>牛排味洋芋片</th>
+                        <th>4</th>
+                    </tr>
+                    <tr>
+                        <th>醬燒洋芋片</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <th>北海道起士洋芋片</th>
+                        <th>6</th>
+                    </tr>
+                    <tr>
+                        <th>甜卡力</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>橫綱棒</th>
+                        <th>8</th>
+                    </tr>
+                    <tr>
+                        <th><i class="far fa-thumbs-up fa-flip-vertical fa-lg"></i>蝦餠</th>
+                        <th>9</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table animated fadeInUp">
+            <div class="name">有點舒服同學</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>名次</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><i class="fad fa-star fa-lg fa-spin"></i>薯圈圈<i class="fad fa-star fa-lg fa-spin"></i></th>
+                        <th>1</th>
+                    </tr>
+                    <tr>
+                        <th>醬燒洋芋片</th>
+                        <th>2</th>
+                    </tr>
+                    <tr>
+                        <th>牛排味洋芋片</th>
+                        <th>3</th>
+                    </tr>
+                    <tr>
+                        <th><i class="fas fa-trophy-alt fa-lg "></i>蒜辣可樂果<i class="fas fa-trophy-alt fa-lg"></i>
+                        </th>
+                        <th>4</th>
+                    </tr>
+                    <tr>
+                        <th>北海道起士洋芋片</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <th>甜卡力</th>
+                        <th>6</th>
+                    </tr>
+                    <tr>
+                        <th>橫綱棒</th>
+                        <th>7</th>
+                    </tr>
+                    <tr>
+                        <th>卡迪那</th>
+                        <th>8</th>
+                    </tr>
+                    <tr>
+                        <th><i class="far fa-thumbs-up fa-flip-vertical fa-lg"></i>蝦餠</th>
+                        <th>9</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
