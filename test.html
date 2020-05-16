@@ -9,15 +9,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/fontawsome.js"></script>
     <style>
+        html {
+            font-size: 0;
+        }
+
         body {
             display: flex;
             overflow: hidden;
             font-size: 24px;
-            width: 100vw;
+            /* width: 100vw; */
             /* height: 100vh; */
             background-color: #21D4FD;
             background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
             font-family: '微軟正黑體';
+        }
+
+        h1,
+        h2,
+        img {
+            box-sizing: border-box;
+            position: fixed;
+            color: #fff;
+            padding: 40px 40px 40px 0;
+            margin: 0;
+            font-size: 84px;
+            width: 100vw;
+            text-align: center;
+        }
+
+        h2,
+        img {
+            font-size: 60px !important;
+            bottom: 0;
+        }
+
+        img {
+            right: 200px;
+            padding: 20px;
+            width: 150px;
+            height: 150px;
         }
 
         .container {
@@ -87,6 +117,10 @@
 </head>
 
 <body>
+    <h1>高中生必吃排行榜</h1>
+    <h2>https://reurl.cc/QdaOyp</h2>
+    <img src="data:image/png;base64,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"
+        alt="">
     <div class="container">
         <div class="table animated fadeInUp">
             <div class="name">楊光照同學</div>
