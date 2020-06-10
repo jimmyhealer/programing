@@ -9,9 +9,8 @@ var firebaseConfig = {
     measurementId: "G-KE49GMQEMH"
 };
 firebase.initializeApp(firebaseConfig);
-if ($.fn.database)
-    var db = firebase.database();
-if ($.fn.firestore)
+
+try {
     var fs = firebase.firestore();
-if ($.fn.storeage)
     var storageRef = firebase.storage().ref();
+} catch{ }

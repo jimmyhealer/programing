@@ -6,6 +6,14 @@
   list-style: none;
 }
 
+code {
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+figure.image img {
+  width: 100%;
+}
+
 .btn:focus {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -362,6 +370,10 @@ a:focus {
 }
 
 .blog-area .blog-catagories {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  margin: 0 auto;
   width: 70%;
   margin: 0px auto 50px;
   z-index: 1;
@@ -418,12 +430,18 @@ a:focus {
   left: 0;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 1024px) {
   .blog-area .blog-catagories .single-catagories {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
             justify-content: center !important;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .blog-area .blog-catagories {
+    display: none !important;
   }
 }
 
@@ -488,59 +506,76 @@ a:focus {
   line-height: 100%;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table, .blog-area .single-blog-area .mailbox .trash-can .trash-email table {
+.blog-area .single-blog-area .mailbox .main-mail table, .blog-area .single-blog-area .mailbox .trash-can .trash-email table, .learn .information table {
   border-spacing: 0;
   border-collapse: collapse;
   width: 100%;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table thead, .blog-area .single-blog-area .mailbox .trash-can .trash-email table thead {
+.blog-area .single-blog-area .mailbox .main-mail table thead, .blog-area .single-blog-area .mailbox .trash-can .trash-email table thead, .learn .information table thead {
   width: 100%;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table thead th, .blog-area .single-blog-area .mailbox .trash-can .trash-email table thead th {
+.blog-area .single-blog-area .mailbox .main-mail table thead th, .blog-area .single-blog-area .mailbox .trash-can .trash-email table thead th, .learn .information table thead th {
   text-align: center;
   font-size: 1.2em;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table thead th.t1, .blog-area .single-blog-area .mailbox .trash-can .trash-email table thead th.t1 {
-  width: 120px;
-}
-
-.blog-area .single-blog-area .mailbox .main-mail table tbody, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody {
+.blog-area .single-blog-area .mailbox .main-mail table tbody, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody, .learn .information table tbody {
   width: 100%;
   overflow-y: scroll;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table tbody tr, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr {
+.blog-area .single-blog-area .mailbox .main-mail table tbody tr, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr, .learn .information table tbody tr {
   cursor: pointer;
   border: 1px solid rgba(204, 204, 204, 0.3);
   font-size: 18px;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table tbody tr td.t1, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr td.t1 {
-  margin: 0 8px;
-}
-
-.blog-area .single-blog-area .mailbox .main-mail table tbody tr td.date, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr td.date {
+.blog-area .single-blog-area .mailbox .main-mail table tbody tr td.date, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr td.date, .learn .information table tbody tr td.date {
   text-align: center;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table tbody tr:hover, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr:hover {
+.blog-area .single-blog-area .mailbox .main-mail table tbody tr:hover, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tbody tr:hover, .learn .information table tbody tr:hover {
   background-color: #eee;
   border: 1.5px solid rgba(204, 204, 204, 0.8);
   -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table tr, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tr {
+.blog-area .single-blog-area .mailbox .main-mail table tr, .blog-area .single-blog-area .mailbox .trash-can .trash-email table tr, .learn .information table tr {
   width: 100%;
 }
 
-.blog-area .single-blog-area .mailbox .main-mail table td, .blog-area .single-blog-area .mailbox .trash-can .trash-email table td,
+.blog-area .single-blog-area .mailbox .main-mail table td, .blog-area .single-blog-area .mailbox .trash-can .trash-email table td, .learn .information table td,
 .blog-area .single-blog-area .mailbox .main-mail table th,
-.blog-area .single-blog-area .mailbox .trash-can .trash-email table th {
+.blog-area .single-blog-area .mailbox .trash-can .trash-email table th,
+.learn .information table th {
   padding: 10px;
+}
+
+.blog-area .single-blog-area .mailbox .main-mail table .t1, .blog-area .single-blog-area .mailbox .trash-can .trash-email table .t1, .learn .information table .t1 {
+  width: 120px;
+}
+
+@media screen and (max-width: 767px) {
+  .blog-area .single-blog-area .mailbox .main-mail table td, .blog-area .single-blog-area .mailbox .trash-can .trash-email table td, .learn .information table td,
+  .blog-area .single-blog-area .mailbox .main-mail table th,
+  .blog-area .single-blog-area .mailbox .trash-can .trash-email table th,
+  .learn .information table th {
+    font-size: 14px !important;
+    padding: 10px 2px;
+  }
+  .blog-area .single-blog-area .mailbox .main-mail table .t1, .blog-area .single-blog-area .mailbox .trash-can .trash-email table .t1, .learn .information table .t1 {
+    width: 54px;
+  }
+  .blog-area .single-blog-area .mailbox .main-mail table .mail-remove, .blog-area .single-blog-area .mailbox .trash-can .trash-email table .mail-remove, .learn .information table .mail-remove {
+    display: none;
+  }
+  .blog-area .single-blog-area .mailbox .main-mail table .date, .blog-area .single-blog-area .mailbox .trash-can .trash-email table .date, .learn .information table .date {
+    display: none;
+    font-size: .6em;
+  }
 }
 
 .blog-area svg {
@@ -630,10 +665,65 @@ a:focus {
           box-sizing: border-box;
 }
 
+@media screen and (max-width: 768px) {
+  .blog-area .single-blog-area .mailbox .mail-header {
+    font-size: 20px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header p {
+    font-size: 1em;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .search {
+    width: 300px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .search input {
+    font-size: 1em;
+    width: 87%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blog-area .single-blog-area .mailbox .mail-header {
+    font-size: 16px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .search {
+    max-width: 180px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .search input {
+    font-size: 0.8em;
+    width: 80%;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .page {
+    width: 60px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .page .chevron:hover {
+    background-color: transparent !important;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .page .faa {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .blog-area .single-blog-area .mailbox .mail-header p {
+    display: none;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .search {
+    max-width: 220px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-header .search input {
+    font-size: 1em;
+    width: 80%;
+  }
+}
+
 .blog-area .single-blog-area .mailbox .main-mail {
   width: 100%;
   margin: 16px 0;
   padding: 4px;
+}
+
+.blog-area .single-blog-area .mailbox .main-mail .readed {
+  color: rgba(153, 153, 153, 0.9);
 }
 
 .blog-area .single-blog-area .mailbox .main-mail .nohas-mail {
@@ -650,6 +740,10 @@ a:focus {
   height: 520px;
   border-radius: 0px 0px 5px 5px;
   background-color: #f1f1f1;
+}
+
+.blog-area .single-blog-area .mailbox .mail-show .show-icon {
+  margin: auto 0;
 }
 
 .blog-area .single-blog-area .mailbox .mail-show .subject {
@@ -696,9 +790,12 @@ a:focus {
 }
 
 .blog-area .single-blog-area .mailbox .mail-show .header p {
-  font-size: 24px;
-  line-height: 48px;
-  margin: auto 6px;
+  font-size: 20px;
+  margin: -4px 6px;
+}
+
+.blog-area .single-blog-area .mailbox .mail-show .header .date {
+  font-size: 18px;
 }
 
 .blog-area .single-blog-area .mailbox .mail-show .header .fa-2x,
@@ -715,6 +812,21 @@ a:focus {
   padding: 15px 20px;
   font-size: 18px;
   overflow-y: scroll;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-area .single-blog-area .mailbox .mail-show .subject h3 {
+    font-size: 20px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-show .header p {
+    font-size: 18px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-show .header .date {
+    font-size: 12px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-show .context {
+    font-size: 16px;
+  }
 }
 
 .blog-area .single-blog-area .mailbox .trash-can .trashCan {
@@ -745,6 +857,19 @@ a:focus {
 .blog-area .single-blog-area .mailbox .trash-can .trash-email .mytable {
   height: 350px;
   overflow-y: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .blog-area .single-blog-area .mailbox .trash-can .trash-email {
+    left: 0px;
+    top: 80px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  .blog-area .single-blog-area .mailbox .trash-can .trash-email .mytable {
+    overflow-x: hidden;
+  }
 }
 
 .blog-area .single-blog-area .mailbox .trash-can p {
@@ -794,6 +919,7 @@ a:focus {
 
 .blog-area .single-blog-area .mailbox .writeMail .write .container-fluid {
   padding: 0;
+  height: 100%;
 }
 
 .blog-area .single-blog-area .mailbox .writeMail .write .container-fluid h4 {
@@ -832,15 +958,21 @@ a:focus {
   outline: none;
 }
 
-.blog-area .single-blog-area .mailbox .writeMail .write .container-fluid textarea {
-  padding: 10px;
-  height: 200px;
-  width: 100%;
-  border: none;
-  resize: none;
+.blog-area .single-blog-area .mailbox .writeMail .write .container-fluid .ck-editor {
+  padding: 5px;
+  height: calc(100% - 192px);
 }
 
-.blog-area .single-blog-area .mailbox .writeMail .write .container-fluid textarea:focus {
+.blog-area .single-blog-area .mailbox .writeMail .write .container-fluid .ck .ck-editor__main {
+  height: 90%;
+}
+
+.blog-area .single-blog-area .mailbox .writeMail .write .container-fluid .ck.ck-content.ck-editor__editable {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-area .single-blog-area .mailbox .writeMail .write .container-fluid .ck.ck-content.ck-editor__editable:focus {
   outline: none;
 }
 
@@ -860,7 +992,85 @@ a:focus {
   outline: none;
 }
 
+@media screen and (max-width: 767px) {
+  .blog-area .single-blog-area .mailbox .writeMail .write {
+    font-size: 20px;
+    overflow-x: hidden;
+    left: 0px;
+    top: 80px;
+    height: 520px;
+    border-radius: 0px 0px 6px 6px;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  .blog-area .single-blog-area .mailbox .writeMail .write h4 {
+    border-radius: 0px !important;
+    font-size: 1em !important;
+  }
+  .blog-area .single-blog-area .mailbox .writeMail .write textarea {
+    height: 320px !important;
+    font-size: 0.8em;
+  }
+  .blog-area .single-blog-area .mailbox .writeMail .write .send {
+    border-radius: 0px 0px 6px 6px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .blog-area .single-blog-area .mailbox {
+    padding: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-area {
+    padding: 20px 5px 30px 5px;
+  }
+  .blog-area .single-blog-area {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .blog-area {
+    padding: 5px 0;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .blog-area > .container-fluid {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .blog-area > .container-fluid .row {
+    margin: 0 -2px;
+  }
+  .blog-area > .container-fluid .row > .col-12 {
+    padding: 0 2px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .blog-area > .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blog-area > .container-fluid .row {
+    margin: 0;
+  }
+  .blog-area > .container-fluid .row > .col-12 {
+    padding: 0;
+  }
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .top-footer-area {
+  font-size: 20px;
   position: relative;
   z-index: 1;
   background-color: #252525;
@@ -872,6 +1082,30 @@ a:focus {
 
 .top-footer-area p {
   color: #ccc;
+  font-size: 0.6em;
+}
+
+.top-footer-area .footer-head,
+.top-footer-area .footer-item {
+  color: #eee;
+}
+
+.top-footer-area .footer-head {
+  font-size: 1em;
+  border-bottom: 2px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.top-footer-area .footer-item {
+  font-size: 0.8em;
+  padding: 5px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.top-footer-area .footer-item:hover {
+  color: yellow;
 }
 
 .forum.container {
@@ -1048,8 +1282,8 @@ a:focus {
   position: relative;
   cursor: pointer;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  background-position: center center;
+  background-size: cover;
   -webkit-transition: .3s;
   transition: .3s;
 }

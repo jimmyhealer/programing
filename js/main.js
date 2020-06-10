@@ -31,6 +31,7 @@ $(function () {
     }
 
     // autoSize
+
     try {
         autosize($('textarea'));
     } catch{ }
@@ -114,49 +115,54 @@ $(function () {
             $(this).attr("disabled", "");
             $("#loading").css("display", "inline-flex");
             var user = firebase.auth().currentUser;
-            firebase
-                .auth()
-                .signInWithEmailAndPassword(user.email, old)
-                .then(function () {
-                    user
-                        .updateProfile({
-                            displayName: username1,
-                            photoURL: user.photoURL,
-                        })
-                        .then(function () {
-                            fs.collection("user")
-                                .doc(user.email)
-                                .withConverter(userConverter)
-                                .set(new User(username1, user.photoURL))
-                                .then(function () {
-                                    if (newpwd.length >= 6)
-                                        user
-                                            .updatePassword(newpwd)
-                                            .then(function () {
-                                                history.go(0);
-                                            })
-                                            .catch(function () {
-                                                pf_error(btn);
-                                            });
-                                    else history.go(0);
-                                })
-                                .catch(function (error) {
-                                    console.log(error);
-                                    pf_error(btn);
-                                });
-                        })
-                        .catch(function (error2) {
-                            console.log(error2);
-                            pf_error(btn);
-                        });
+            login(old)
+                .then(success => {
+                    console.log(success);
+                    return editprofile(username1, user.photoURL);
+                }
+                    , fail => {
+                        throw fail;
+                    }
+                )
+                .then(success => {
+                    console.log(success);
+                    return editfs(username1, user.photoURL);
                 })
-                .catch(function (error1) {
-                    console.log(error1);
-                    $("#pwderror").show();
+                .then(success => {
+                    console.log(success);
+                    if (newpwd.length >= 6)
+                        return updatePwd(newpwd);
+                })
+                .then(success => {
+                    console.log(success);
+                })
+                .catch(error => {
                     pf_error(btn);
-                });
+                    if (error.code === 'auth/wrong-password')
+                        $('#pwdError').show();
+                    else if (error.code === 'auth/too-many-requests')
+                        $.alert({
+                            title: '密碼輸錯太多次!!',
+                            content: '請稍後再試試',
+                            backgroundDismiss: true
+                        });
+                    else
+                        $.alert({
+                            title: '發生未知錯誤',
+                            content: '請聯絡客服，感謝!',
+                            backgroundDismiss: true
+                        });
+                    throw console.log('error:', error)
+                })
+                .then(() => {
+                    console.log('done');
+                    history.go(0);
+                    return true;
+                })
         }
     });
+
+
 
     $("#ud_pwd").click(function () {
         $(this).hide();
@@ -208,8 +214,8 @@ $(function () {
                 uploadTask.on(
                     "state_changed",
                     function (snapshot) {
-                        progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                        $("#progress_bar").css("width", "{0}%".format(progress - 20));
+                        progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100 - 20;
+                        $("#progress_bar").css("width", `${progress}% `);
                         switch (snapshot.state) {
                             case firebase.storage.TaskState.PAUSED:
                                 console.log("Upload is paused");
@@ -226,20 +232,16 @@ $(function () {
                         uploadTask.snapshot.ref
                             .getDownloadURL()
                             .then(function (downloadURL) {
-                                fs.collection("user")
-                                    .doc(user.email)
-                                    .withConverter(userConverter)
-                                    .set(new User(user.displayName, downloadURL))
-                                    .then(function () {
+                                console.log(downloadURL);
+                                editfs(user.displayName, downloadURL)
+                                    .then(success => { return editprofile(user.displayName, downloadURL) })
+                                    .catch(error => { console.log(error) })
+                                    .finally(() => {
                                         $("#progress_bar").css("width", "100%");
                                         window.setTimeout(function () {
                                             history.go(0);
                                         }, 100);
-                                    });
-                                user.updateProfile({
-                                    displayName: user.displayName,
-                                    photoURL: downloadURL,
-                                });
+                                    })
                             });
                     }
                 );
@@ -285,3 +287,4 @@ if ($.fn.validate)
                 });
         }
     });
+

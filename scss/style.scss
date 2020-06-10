@@ -9,6 +9,14 @@
     list-style: none;
 }
 
+code {
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+figure.image img {
+    width: 100%;
+}
+
 .btn:focus {
     box-shadow: none !important;
 }
@@ -119,7 +127,7 @@ a:focus {
     }
 }
 
-// login
+//* *login
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -195,7 +203,7 @@ a:focus {
     }
 }
 
-// navbar
+//* *navbar
 
 .navbar {
     position: relative;
@@ -266,7 +274,7 @@ a:focus {
     }
 }
 
-// flexslider
+//* *flexslider
 
 .flexslider {
     background: none;
@@ -321,7 +329,7 @@ a:focus {
 
 }
 
-// home about-img 
+//* *home *about-img 
 
 .about-desc {
     width: 100%;
@@ -351,7 +359,7 @@ a:focus {
     }
 }
 
-// home cources
+//* *home *cources
 
 .home-cources.container {
     height: 800px;
@@ -371,12 +379,14 @@ a:focus {
 
 
 
-//profile BlogArea
+//* *profile *BlogArea
 
 .blog-area {
     padding: 100px 7% 30px 7%;
 
     .blog-catagories {
+        justify-content: center !important;
+        margin: 0 auto;
         width: 70%;
         margin: 0px auto 50px;
         z-index: 1;
@@ -426,12 +436,15 @@ a:focus {
                 left: 0;
             }
 
-            @media screen and (min-width: 767px) {
-                & {
-                    justify-content: center !important;
-                    margin: 0 auto;
-                }
+            @media screen and (min-width: 1024px) {
+                justify-content: center !important;
+                margin: 0 auto;
             }
+        }
+
+
+        @media screen and (max-width: 1023px) {
+            display: none !important;
         }
     }
 
@@ -496,8 +509,7 @@ a:focus {
     }
 }
 
-// profile email
-
+//* *table
 
 %table {
     border-spacing: 0;
@@ -510,10 +522,6 @@ a:focus {
         th {
             text-align: center;
             font-size: 1.2em;
-
-            &.t1 {
-                width: 120px;
-            }
         }
     }
 
@@ -527,10 +535,6 @@ a:focus {
             font-size: 18px;
 
             td {
-                &.t1 {
-                    margin: 0 8px;
-                }
-
                 &.date {
                     text-align: center;
                 }
@@ -553,7 +557,35 @@ a:focus {
     th {
         padding: 10px;
     }
+
+    .t1 {
+        width: 120px;
+    }
+
+    @media screen and (max-width: 767px) {
+
+        td,
+        th {
+            font-size: 14px !important;
+            padding: 10px 2px;
+        }
+
+        .t1 {
+            width: 54px;
+        }
+
+        .mail-remove {
+            display: none;
+        }
+
+        .date {
+            display: none;
+            font-size: .6em;
+        }
+    }
 }
+
+//* *profile *email
 
 .blog-area {
 
@@ -630,6 +662,67 @@ a:focus {
                         box-sizing: border-box;
                     }
                 }
+
+                @media screen and (max-width:768px) {
+                    font-size: 20px;
+
+                    p {
+                        font-size: 1em;
+                    }
+
+                    .search {
+                        width: 300px;
+
+                        input {
+                            font-size: 1em;
+                            width: 87%;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 576px) {
+                    font-size: 16px;
+
+                    .search {
+                        max-width: 180px;
+
+                        input {
+                            font-size: 0.8em;
+                            width: 80%;
+                        }
+                    }
+
+                    .page {
+                        width: 60px;
+
+                        .chevron {
+
+                            &:hover {
+                                background-color: transparent !important;
+                            }
+                        }
+
+                        .faa {
+                            font-size: 16px;
+                        }
+                    }
+                }
+
+                @media screen and (max-width:360px) {
+
+                    p {
+                        display: none;
+                    }
+
+                    .search {
+                        max-width: 220px;
+
+                        input {
+                            font-size: 1em;
+                            width: 80%;
+                        }
+                    }
+                }
             }
 
             .main-mail {
@@ -639,6 +732,10 @@ a:focus {
 
                 table {
                     @extend %table;
+                }
+
+                .readed {
+                    color: rgba(153, 153, 153, 0.9);
                 }
 
                 .nohas-mail {
@@ -656,6 +753,10 @@ a:focus {
                 height: 520px;
                 border-radius: 0px 0px 5px 5px;
                 background-color: #f1f1f1;
+
+                .show-icon {
+                    margin: auto 0;
+                }
 
                 .subject {
                     display: flex;
@@ -692,9 +793,12 @@ a:focus {
                     }
 
                     p {
-                        font-size: 24px;
-                        line-height: 48px;
-                        margin: auto 6px;
+                        font-size: 20px;
+                        margin: -4px 6px;
+                    }
+
+                    .date {
+                        font-size: 18px;
                     }
 
                     .fa-2x,
@@ -710,6 +814,28 @@ a:focus {
                     padding: 15px 20px;
                     font-size: 18px;
                     overflow-y: scroll;
+                }
+
+                @media screen and (max-width:768px) {
+                    .subject {
+                        h3 {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .header {
+                        p {
+                            font-size: 18px;
+                        }
+
+                        .date {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .context {
+                        font-size: 16px;
+                    }
                 }
             }
 
@@ -743,21 +869,18 @@ a:focus {
                     }
 
                     table {
-                        // display: block;
                         @extend %table;
+                    }
 
-                        // thead {
-                        //     display: block;
-                        //     width: 100%;
-                        //     height: 48px;
-                        // }
+                    @media screen and (max-width:767px) {
+                        left: 0px;
+                        top: 80px;
+                        border-radius: 0px;
+                        box-shadow: none !important;
 
-                        // tbody {
-                        //     display: block;
-                        //     height: 300px;
-                        //     overflow-y: scroll;
-                        // }
-
+                        .mytable {
+                            overflow-x: hidden;
+                        }
                     }
                 }
 
@@ -806,6 +929,7 @@ a:focus {
 
                     .container-fluid {
                         padding: 0;
+                        height: 100%;
 
                         h4 {
                             font-size: 24px;
@@ -839,12 +963,23 @@ a:focus {
                             }
                         }
 
-                        textarea {
-                            padding: 10px;
-                            height: 200px;
+                        // .new-mail {
+                        //     padding: 10px;
+                        // }
+
+                        .ck-editor {
+                            padding: 5px;
+                            height: calc(100% - 192px);
+
+                        }
+
+                        .ck .ck-editor__main {
+                            height: 90%;
+                        }
+
+                        .ck.ck-content.ck-editor__editable {
                             width: 100%;
-                            border: none;
-                            resize: none;
+                            height: 100%;
 
                             &:focus {
                                 outline: none;
@@ -868,6 +1003,78 @@ a:focus {
                         }
 
                     }
+
+                    @media screen and (max-width:767px) {
+                        font-size: 20px;
+                        overflow-x: hidden;
+                        left: 0px;
+                        top: 80px;
+                        height: 520px;
+                        border-radius: 0px 0px 6px 6px;
+                        box-shadow: none !important;
+
+                        h4 {
+                            border-radius: 0px !important;
+                            font-size: 1em !important;
+                        }
+
+                        textarea {
+                            height: 320px !important;
+                            font-size: 0.8em;
+                        }
+
+                        .send {
+                            border-radius: 0px 0px 6px 6px !important;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width:576px) {
+                padding: 20px 10px;
+            }
+        }
+    }
+
+
+
+    @media screen and (max-width: 1200px) {
+        padding: 20px 5px 30px 5px;
+
+        & .single-blog-area {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        padding: 5px 0;
+    }
+
+    @media screen and (max-width: 786px) {
+        &>.container-fluid {
+            padding-left: 2px;
+            padding-right: 2px;
+
+            .row {
+                margin: 0 -2px;
+
+                &>.col-12 {
+                    padding: 0 2px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 786px) {
+        &>.container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+
+            .row {
+                margin: 0;
+
+                &>.col-12 {
+                    padding: 0;
                 }
             }
         }
@@ -875,9 +1082,27 @@ a:focus {
 
 }
 
-// footer
+.learn {
+    .information {
+        table {
+            @extend %table;
+        }
+    }
+
+}
+
+//* *ellipsis
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+//* *footer
 
 .top-footer-area {
+    font-size: 20px;
     position: relative;
     z-index: 1;
     background-color: #252525;
@@ -888,10 +1113,33 @@ a:focus {
 
     p {
         color: #ccc;
+        font-size: 0.6em;
+    }
+
+    .footer-head,
+    .footer-item {
+        color: #eee;
+    }
+
+    .footer-head {
+        font-size: 1em;
+        border-bottom: 2px solid #ccc;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .footer-item {
+        font-size: 0.8em;
+        padding: 5px;
+        transition: .3s;
+
+        &:hover {
+            color: yellow;
+        }
     }
 }
 
-// forum
+//* *forum
 .forum.container {
     width: 60%;
     margin: 30px auto;
@@ -1038,8 +1286,8 @@ a:focus {
                 position: relative;
                 cursor: pointer;
                 background-repeat: no-repeat;
-                background-position: center;
-                background-size: 100%;
+                background-position: center center;
+                background-size: cover;
                 transition: .3s;
 
                 &:nth-child(3) {
@@ -1264,7 +1512,7 @@ a:focus {
     @media screen and (max-width:576px) {}
 }
 
-// source
+//* *source
 .benner {
     width: 100%;
     margin-top: 28px;
@@ -1395,7 +1643,7 @@ a:focus {
     }
 }
 
-// learn
+//* *learn
 
 $learnm : 0.5rem;
 
@@ -1406,7 +1654,7 @@ $learnm : 0.5rem;
 
 }
 
-// chatroom 
+//* *chatroom 
 .noshadow {
     box-shadow: none !important;
 }

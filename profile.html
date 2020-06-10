@@ -15,14 +15,17 @@
     <!-- Stylesheet -->
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.css">
     <link rel="stylesheet" href="css/lib.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.9/angular-sanitize.min.js"></script>
 </head>
 
-<body profile='true'>
+<body profile='true' ng-app='programingApp' ng-controller='profiles'>
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
@@ -54,7 +57,7 @@
             <div id='navProfile' class="nav-profile">
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="##" id="navUserName" data-toggle="dropdown"
-                        style="color: black;">
+                        style="color: black;" ng-bind="user.displayName">
                         用戶
                     </a>
                     <div class="border-0 shadow dropdown-menu dropdown-menu-left">
@@ -65,7 +68,8 @@
                     </div>
                 </div>
                 <div class="userthumb mr30">
-                    <img id="userphoto" src="img/logo.jpg" width="40" height="40" />
+                    <img id="userphoto" ng-src='{{user.photoURL}}' src="img/logo.jpg" width="40" height="40"
+                        style="border-radius: 50%;" />
                 </div>
             </div>
         </div>
@@ -89,7 +93,7 @@
                             </a>
                         </div>
                         <div class="single-catagories bg-img" style="background-image: url(img/bg-img/bc3.jpg);">
-                            <a href="javascript:showprofile(3)">
+                            <a id='mailBox' href="javascript:showprofile(3)">
                                 <h6>收件匣</h6>
                             </a>
                         </div>
@@ -99,7 +103,8 @@
 
             <div class="row">
                 <div class="col-12">
-                    <div name='pf' id="pf_1" class="col-12 single-blog-area animated fadeInUp">
+                    <div name='pf' id="pf_1" class="col-12 single-blog-area animated fadeInUp"
+                        ang-controller='editprofile'>
                         <div class="blog-content">
                             <a href="##" class="blog-headline">
                                 <h4>個人資料</h4>
@@ -113,49 +118,51 @@
                                                 <input id='file' style="display: none;" type="file"
                                                     accept="image/png, image/jpeg" />
                                                 <button type="button" onclick="file.click()" class="mask">換照片</button>
-                                                <img class="img-circle" id="pf_photo" src="img/logo.jpg" alt="">
+                                                <img class="img-circle" id="pf_photo" ng-src='{{user.photoURL}}'
+                                                    src="img/logo.jpg" alt="">
                                             </div>
                                         </div>
                                         <div class="mt-3 mt-lg-0 col-12 col-lg-5 form-group">
                                             <div class="control-group mt-15 ">
                                                 <div class="d-inline-flex">
-                                                    <label class="control-label mr-30">你的信箱
+                                                    <label name='email' class="control-label mr-30">你的信箱
                                                         (無法修改)</label>
                                                 </div>
                                                 <div>
-                                                    <input class="form-control" type="text" name="email" id="pf_email"
-                                                        disabled>
+                                                    <input class="form-control" type="text" value="{{user.email}}"
+                                                        name="email" id="pf_email" disabled>
                                                 </div>
                                             </div>
                                             <div class="control-gro">
                                                 <div class="d-inline-flex">
                                                     <label class="control-label">你的名字<b
                                                             style="color: red;">*</b></label>
-                                                    <p id='namenull' class="control-label ml15"
+                                                    <p id='namenull' name='uajfhl' class="control-label ml15"
                                                         style="display: none;font-weight: bolder; color: red;">
                                                         名字不能為空</p>
                                                 </div>
                                                 <div>
                                                     <input class="form-control" id="pf_username" type="text"
-                                                        name="required" id="required" disabled>
+                                                        name="required" id="required" value='{{user.displayName}}'
+                                                        disabled>
                                                 </div>
                                             </div>
                                             <div id='div_oldpwd' class="control-grou" style="display: none;">
                                                 <div class="d-inline-flex">
-                                                    <label class="control-label mr30">舊密碼<b
+                                                    <label name='password' class="control-label mr30">舊密碼<b
                                                             style="color: red;">*</b></label>
                                                     <a class="control-label" id='ud_pwd' href="##"
                                                         style="color: red;">修改密碼</a>
-                                                    <p id='pwderror' class="control-label ml-15"
+                                                    <p id='pwdError' class="control-label ml-2"
                                                         style="display: none;font-weight: bolder; color: red;">
                                                         密碼錯誤</p>
-                                                    <p id='pwdnull' class="control-label ml-15"
+                                                    <p id='pwdnull' class="control-label ml-2"
                                                         style="display: none;font-weight: bolder; color: red;">
                                                         密碼不能為空</p>
                                                 </div>
                                                 <div>
                                                     <input class="form-control" id="pf_oldpwd" type="password"
-                                                        name="required">
+                                                        name="password" required>
                                                 </div>
                                             </div>
                                             <div id='div_newpwd' class="control-grou" style="display: none;">
@@ -181,6 +188,7 @@
                                             </div>
                                         </div>
                                         <!-- <d class="col-lg-4"></d> -->
+                                    </div>
                                 </form>
                                 <div id='update_ph' class="col-lg-4" style="display: none;">
                                     <div class="progress">
@@ -193,213 +201,208 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Single Blog Area -->
-                <div name='pf' id="pf_2" class="col-12" style="display: none;">
-                    <div class="d-flex single-blog-area mb-100 animated fadeInUp justify-content-center">
-                        <!-- Blog Content -->
-                        <div class="col-lg-6 d-inline-block">
-                            <div class="blog-content align-items-center">
-                                <a href="##" class="blog-headline">
-                                    <h4>未開始的課程</h4>
-                                </a>
-                                <ul class="list-group">
-                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action">Python
-                                        課程</a>
-                                    <a id='not_lesson_1' href="##"
-                                        class="list-group-item list-group-item-action">Scratch
-                                        課程</a>
-                                </ul>
+                    <!-- Single Blog Area -->
+                    <div name='pf' id="pf_2" class="col-12" style="display: none;">
+                        <div class="d-flex single-blog-area mb-100 animated fadeInUp justify-content-center">
+                            <!-- Blog Content -->
+                            <div class="col-lg-6 d-inline-block">
+                                <div class="blog-content align-items-center">
+                                    <a href="##" class="blog-headline">
+                                        <h4>未開始的課程</h4>
+                                    </a>
+                                    <ul class="list-group">
+                                        <a id='not_lesson_1' href="##"
+                                            class="list-group-item list-group-item-action">Python
+                                            課程</a>
+                                        <a id='not_lesson_1' href="##"
+                                            class="list-group-item list-group-item-action">Scratch
+                                            課程</a>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="blog-content align-items-center">
+                                    <a href="##" class="blog-headline">
+                                        <h4>正在開始的課程</h4>
+                                    </a>
+                                    <ul class="list-group">
+                                        <a id='not_lesson_1' href="##"
+                                            class="list-group-item list-group-item-action"></a>
+                                        <a id='not_lesson_1' href="##"
+                                            class="list-group-item list-group-item-action"></a>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="blog-content align-items-center">
+                                    <a href="##" class="blog-headline">
+                                        <h4>已過去的課程</h4>
+                                    </a>
+                                    <ul class="list-group">
+                                        <a id='not_lesson_1' href="##"
+                                            class="list-group-item list-group-item-action"></a>
+                                        <a id='not_lesson_1' href="##"
+                                            class="list-group-item list-group-item-action"></a>
+                                    </ul>
+                                </div>
                             </div>
-                            <hr>
-                            <div class="blog-content align-items-center">
-                                <a href="##" class="blog-headline">
-                                    <h4>正在開始的課程</h4>
-                                </a>
-                                <ul class="list-group">
-                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
-                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
-                                </ul>
-                            </div>
-                            <hr>
-                            <div class="blog-content align-items-center">
-                                <a href="##" class="blog-headline">
-                                    <h4>已過去的課程</h4>
-                                </a>
-                                <ul class="list-group">
-                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
-                                    <a id='not_lesson_1' href="##" class="list-group-item list-group-item-action"></a>
-                                </ul>
-                            </div>
+
                         </div>
-
                     </div>
-                </div>
 
-                <!-- Single Blog Area -->
-                <div name='pf' id="pf_3" class="col-12" style="display: none;">
-                    <div class="single-blog-area mb-100 animated     fadeInUp ">
-                        <div class="blog-content container mailbox">
-                            <div class="mail-header">
-                                <p>收件匣</p>
-                                <div class="search">
-                                    <input type="text">
-                                    <i class="fa fa-search mr-2"></i>
-                                </div>
-                                <div class="page">
-                                    <div class="chevron">
-                                        <i class="fa fa-chevron-left fa-lg"></i>
+                    <!-- Single Blog Area -->
+                    <div name='pf' id="pf_3" class="col-12" style="display: none;" ang-controller='mailBox'>
+                        <div class="single-blog-area mb-100 animated fadeInUp ">
+                            <div class="blog-content container-fluid mailbox">
+                                <div class="mail-header">
+                                    <p>收件匣</p>
+                                    <div class="search">
+                                        <!-- <input type="text" ng-model="searchMail.subject"> -->
+                                        <input type="text" ng-model="searchMail.subject" ng-change="searchChange()" />
+                                        <input type="hidden" ng-model="searchMail.subject" />
+                                        <!-- <input type="hidden" ng-model="searchMail.sender" /> -->
+                                        <i class="fa fa-search mr-2 faa"></i>
                                     </div>
-                                    <p>1</p>
-                                    <div class="chevron">
-                                        <i class="fa fa-chevron-right fa-lg"></i>
+                                    <div class="page">
+                                        <div class="chevron" ng-click="pageBefore()">
+                                            <i class="fa fa-chevron-left fa-lg faa"></i>
+                                        </div>
+                                        <p ng-bind="page">1</p>
+                                        <div class="chevron" ng-click="pageNext()">
+                                            <i class="fa fa-chevron-right fa-lg faa"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="main-mail">
-                                <table>
-                                    <thead>
-                                        <tr class="th">
-                                            <th class="t1">寄件人</th>
-                                            <th>主旨</th>
-                                            <th></th>
-                                            <th>日期</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="mails">
-                                            <td class="t1">test</td>
-                                            <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                                            <td><i class="fa fa-trash-alt fa-fw fa-sm m-auto"></i></td>
-                                            <td class="date">2020/05/09</td>
-                                        </tr>
-                                        <tr class="mails">
-                                            <td class="t1">test2</td>
-                                            <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                                            <td><i class="fa fa-trash-alt fa-fw fa-sm m-auto"></i></td>
-                                            <td class="date">2020/05/09</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p class="nohas-mail">
-                                    已經到最底了。
-                                </p>
-                            </div>
-                            <div class="mail-show" style="display: none;">
-                                <div class="subject">
-                                    <div id="backMail" class="back-mail ml-2 mr-2">
-                                        <i class="fas fa-arrow-left fa-2x fa-fw m-auto"></i>
-                                    </div>
-                                    <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                                </div>
-                                <div class="header">
-                                    <img src="https://picsum.photos/42/42/?random=1">
-                                    <p>Name</p>
-                                    <p class="ml-auto" style="font-size: 18px;">2020/05/09 18:29</p>
-                                    <i class="fa fa-reply fa-lg fa-2x"></i>
-                                    <i class="fa fa-trash-alt fa-2x"></i>
-                                    <i class="fa fa-ellipsis-v fa-lg fa-fw"></i>
-                                </div>
-                                <div class="context">
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. In cupiditate fugiat
-                                        nostrum quo porro beatae accusantium odit perferendis maxime voluptate quam vel,
-                                        commodi repudiandae iste debitis ab rem dicta ipsa!
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti rerum harum
-                                        nulla animi eum odio maiores iure neque unde, vel temporibus? Minus, officia!
-                                        Ullam, sed iusto? Numquam quis commodi facilis tempore, rem minima dolores
-                                        molestiae ad voluptate ipsam quidem, consectetur blanditiis laborum ratione
-                                        asperiores sit assumenda quibusdam ut sunt necessitatibus cupiditate repellat,
-                                        incidunt quasi? Modi sed delectus adipisci id exercitationem suscipit quod! Odit
-                                        nam est hic eveniet tenetur aut incidunt corrupti pariatur laboriosam, ullam
-                                        cupiditate mollitia earum nisi in exercitationem vel sed. Consectetur blanditiis
-                                        sapiente aut tenetur velit! Quibusdam, quis sit provident eveniet, facilis vero
-                                        voluptates ex, fugiat iure optio sunt adipisci illo nam nisi ullam culpa
-                                        suscipit laborum sed fugit molestiae quos illum accusantium beatae numquam?
-                                        Possimus ea rerum, animi id quas autem iste accusantium. Nulla dolores repellat
-                                        esse nesciunt deleniti accusantium assumenda et sunt minus, dignissimos
-                                        voluptatibus, ipsa doloribus, amet labore! Eaque dolorum eligendi,
-                                        necessitatibus, nulla tenetur optio nesciunt, iste voluptatum totam sunt qui?
-                                        Porro, neque aliquam unde at, esse dolor ea suscipit facilis placeat natus,
-                                        deserunt quae! Perferendis magni placeat amet commodi illum debitis facilis
-                                        eligendi repellendus tenetur similique quibusdam, repellat reiciendis quaerat
-                                        qui vitae aperiam voluptas. Ut voluptas ipsum quo distinctio asperiores ipsam
-                                        recusandae cumque veniam, praesentium vel odio aspernatur quasi atque earum iure
-                                        nesciunt molestiae numquam autem. Cum libero earum nam debitis omnis, pariatur
-                                        veritatis vitae, doloribus animi accusamus labore fuga repudiandae dolorem sed
-                                        cumque quasi, corrupti itaque officiis quos saepe ullam? Reprehenderit optio,
-                                        dolores rerum sint vel atque assumenda nemo id ab expedita saepe, autem, ad
-                                        exercitationem debitis voluptates provident eius a dignissimos? Ut provident
-                                        autem necessitatibus aperiam explicabo perspiciatis delectus, natus ipsum omnis
-                                        error quos iure esse quaerat minus recusandae dolorum eaque nisi libero sit
-                                        voluptatum vitae illum quae nesciunt optio. Deserunt debitis numquam laborum
-                                        natus dolor libero delectus expedita, iste quam adipisci?
+                                <div class="main-mail">
+                                    <table>
+                                        <thead>
+                                            <tr class="th">
+                                                <th class="t1">寄件人</th>
+                                                <th class="subject ellipsis">主旨</th>
+                                                <th class="mail-remove"></th>
+                                                <th class="date">日期</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="mails" ng-repeat="item in mailArray | filter:searchMail"
+                                                ng-if="$index >= 7 * (page-1) && $index < 7*page"
+                                                ng-class="{'readed': item.read}">
+                                                <td class="t1" ng-click="mailLook()">{{item.sender}}</td>
+                                                <td ng-click="mailLook()">
+                                                    <div class="subject ellipsis">
+                                                        {{item.subject}}
+                                                    </div>
+                                                </td>
+                                                <td class="mail-remove" ng-click="mailRemove(0)" title="刪除">
+                                                    <i class="fa fa-trash-alt fa-fw fa-sm m-auto"></i></td>
+                                                <td class="date" ng-click="mailLook()">
+                                                    {{item.date.toDate() | date:'yyyy/MM/dd' }}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="nohas-mail">
+                                        已經到最底了。
                                     </p>
                                 </div>
-                            </div>
-                            <div class="trash-can">
-                                <div id="trashmail" class="trashCan">
-                                    <i class="fa fa-trash-alt fa-3x m-auto"></i>
-                                </div>
-                                <div class="trash-email shadow" style="display: none;">
-                                    <div class="mytable">
-
-                                        <table>
-                                            <thead>
-                                                <tr class="th">
-                                                    <th class="t1">寄件人</th>
-                                                    <th>主旨</th>
-                                                    <th></th>
-                                                    <th>日期</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>test</td>
-                                                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</td>
-                                                    <td><i class="fas fa-trash-restore"></i></td>
-                                                    <td>2020/05/09</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <div class="mail-show" style="display: none;">
+                                    <div class="subject">
+                                        <div id="backMail" class="back-mail ml-2 mr-2">
+                                            <i class="fas fa-arrow-left fa-2x fa-fw m-auto"></i>
+                                        </div>
+                                        <h3 ng-bind="mail.subject">無主旨</h3>
                                     </div>
-
-                                    <p>7天自動刪除</p>
+                                    <div class="header">
+                                        <img onerror="javascript:this.src='/img/logo.jpg'"
+                                            ng-src='{{mail.senderPhotoURL}}'>
+                                        <div class="db mr-auto">
+                                            <p>{{mail.sender}}</p>
+                                            <p style="font-size: 16px;color: #888;">({{mail.senderMail}})</p>
+                                        </div>
+                                        <p class="ml-auto date">{{mail.date.toDate() | date:'yyyy/MM/dd'}}</p>
+                                        <!-- <i class="fa fa-reply fa-lg fa-2x"></i> -->
+                                        <div ng-click="mailRemove(1)" class="show-icon" title="刪除"><i
+                                                class="fa fa-trash-alt fa-2x"></i></div>
+                                        <!-- <i class="fa fa-ellipsis-v fa-lg fa-fw"></i> -->
+                                    </div>
+                                    <!-- content -->
+                                    <div class="context" ng-bind-html="mail.content">
+                                        <!-- <pre ng-bind="mail.contents"></pre> -->
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="writeMail">
-                                <div id="writeEmail" class="plus">
-                                    <i class="fa fa-plus fa-3x m-auto"></i>
+                                <div class="trash-can">
+                                    <div id="trashmail" class="trashCan">
+                                        <i class="fa fa-trash-alt fa-3x m-auto"></i>
+                                    </div>
+                                    <div class="trash-email shadow" style="display: none;">
+                                        <div class="mytable">
+                                            <table class="trash-table">
+                                                <thead>
+                                                    <tr class="th">
+                                                        <th class="t1">寄件人</th>
+                                                        <th class="trash-subject ellipsis">主旨</th>
+                                                        <th class="mail-history"></th>
+                                                        <th class="mail-remove"></th>
+                                                        <th class="date">日期</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="mails"
+                                                        ng-repeat="item in trashMailArray | orderBy:date.toDate():reverse">
+                                                        <td class="t1">{{item.sender}}</td>
+                                                        <td>
+                                                            <div class="trash-subject ellipsis">
+                                                                {{item.subject}}
+                                                            </div>
+                                                        </td>
+                                                        <td class="mr-sm-2" title="還原" ng-click="mailRevert()">
+                                                            <i class="fas fa-history"></i>
+                                                        </td>
+                                                        <td class="" ng-click="mailRemove(2)" title="刪除">
+                                                            <i class="fa fa-trash-alt fa-fw fa-sm m-auto"></i></td>
+                                                        <td class="date">
+                                                            {{item.date.toDate() | date:'yyyy/MM/dd' }}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <p>7天自動刪除</p>
+                                    </div>
                                 </div>
-                                <div class="write email shadow" style="display: none;">
-                                    <div class="container-fluid">
-                                        <h4>新郵件
-                                            <div id="writeEmail1" class="close">
-                                                <i class="fa fa-lg fa-times"></i>
+                                <div class="writeMail">
+                                    <div id="writeEmail" class="plus">
+                                        <i class="fa fa-plus fa-3x m-auto"></i>
+                                    </div>
+                                    <div class="write email shadow" style="display: none;">
+                                        <div class="container-fluid">
+                                            <h4>新郵件
+                                                <div id="writeEmail1" class="close">
+                                                    <i class="fa fa-lg fa-times m-auto"></i>
+                                                </div>
+                                            </h4>
+                                            <div class="toolbar"></div>
+                                            <div class="recipient">
+                                                <input placeholder="收件人" type="text" name="" id="newRecipient">
                                             </div>
-                                        </h4>
-                                        <div class="toolbar"></div>
-                                        <div class="recipient">
-                                            <input placeholder="收件人" type="text" name="" id="">
+                                            <div class="subject">
+                                                <input placeholder="主旨" type="text" name="" id="newSubject">
+                                            </div>
+                                            <div class="new-mail" name="" id="newMailEditor"></div>
+                                            <button id='newMailSend' class="send"><i
+                                                    class="fa fa-paper-plane mr-2"></i>送出</button>
                                         </div>
-                                        <div class="subject">
-                                            <input placeholder="主旨" type="text" name="" id="">
-                                        </div>
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                                        <button class="send"><i class="fa fa-paper-plane mr-2"></i>送出</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
     <!-- ##### Blog Area End ##### -->
-
-
+    <!-- <button id='test' class="btn btn-info" ng-click="action()">test</button> -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -427,10 +430,18 @@
     <!-- jQuery-2.2.4 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/fontawsome.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shave/2.5.9/jquery.shave.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shave/2.1.3/shave.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+    <script src="js/ckeditor.js"></script>
     <script src="js/main.js"></script>
     <script src="js/config.js"></script>
     <script src="js/main1.js"></script>

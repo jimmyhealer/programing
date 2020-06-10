@@ -7,19 +7,26 @@
     <meta name="description" content="" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>普羅學習網 | Programing &amp; 普羅程式教育</title>
-
+    <title>普羅學習網 | Programing &amp;
+        普羅程式教育</title>
     <!-- Favicon -->
     <link rel="icon" href="img/logo.jpg">
-
     <!-- Stylesheet -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="css/lib.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+        .faa {
+            width: 30px !important;
+            height: 30px !important;
+            color: #fff;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>
 </head>
 
 <body learn='true'>
@@ -27,69 +34,138 @@
     <div id="preloader">
         <div class="spinner"></div>
     </div>
-
     <!-- ##### Header Area Start ##### -->
     <nav class="navbar navbar-meau navbar-expand-md navbar-light fixed-top learn ">
         <a href="index.html" class="nav-link mr-auto">
             <span class="navbar-brand">
-                <img id="" src="img/logo.jpg" width="60" height="60" />
-                Programing | 普羅程式教育
-            </span>
-        </a>
-        <button class="navbar-toggler mr10" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                <img id="" src="img/logo.jpg" width="60" height="60" />Programing | 普羅程式教育 </span></a><button
+            class="navbar-toggler mr10" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                 <li class="nav-item"><a class="nav-link" href="cources.html">課程</a></li>
                 <li class="nav-item"><a class="nav-link" href="forum.html">論壇</a></li>
             </ul>
-            <div id="navLogin" class="mr30">
-                <a href="login.html">
-                    <button class="btn btn-primary">登入</button>
-                </a>
+            <div id="navLogin" class="mr30"><a href="login.html"><button class="btn btn-primary">登入</button></a>
             </div>
             <div id='navProfile' class="nav-profile">
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="##" id="navUserName" data-toggle="dropdown"
-                        style="color: black;">
-                        用戶
-                    </a>
-                    <div class="border-0 shadow dropdown-menu dropdown-menu-left">
-                        <a class="dropdown-item" href="profile.html?1">個人資料</a>
-                        <a class="dropdown-item" href="profile.html?2">我的課程</a>
-                        <a class="dropdown-item" href="profile.html?3">收件匣</a>
-                        <a class="dropdown-item" href="index.html" id="signOut">登出</a>
-                    </div>
+                <div class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="##" id="navUserName"
+                        data-toggle="dropdown" style="color: black;">用戶 </a>
+                    <div class="border-0 shadow dropdown-menu dropdown-menu-left"><a class="dropdown-item"
+                            href="profile.html?1">個人資料</a><a class="dropdown-item" href="profile.html?2">我的課程</a><a
+                            class="dropdown-item" href="profile.html?3">收件匣</a><a class="dropdown-item"
+                            href="index.html" id="signOut">登出</a></div>
                 </div>
-                <div class="userthumb mr30">
-                    <img id="userphoto" src="img/logo.jpg" width="40" height="40" />
+                <div class="userthumb mr30"><img id="userphoto" src="img/logo.jpg" width="40" height="40" />
                 </div>
             </div>
         </div>
     </nav>
     <!-- ##### Header Area End ##### -->
+    <div class="container-fluid learn shadow" ng-app="myApp" resize>
+        <div class="container-fluid d-flex">
+            <div class="row" style="width: 100%;">
+                <div class="ppts col-xl-7 col-lg-12">
+                    <iframe
+                        src="https://docs.google.com/presentation/d/e/2PACX-1vRVEIruzGJn-7qj-2LWLvT3E9MsJUGiARmNcIc4UjwNdcxLB8Nhc-OVJRLEKhl5IC9PFjlkOCdzNcwb/embed?start=false&loop=false&delayms=3000"
+                        frameborder="0" width="{{width}}" height="{{width/16*9+29}}" allowfullscreen="true"
+                        mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    <div class="class-list">
+                        <div id="homeCources" class="gallery js-flickity" data-flickity='{"imagesLoaded": true ,"selectedAttraction": 0.01,
+                "friction": 0.15}'>
+                            <div class="gallery-cell learn-list">
+                                <a href="##">
+                                    <div class="card shadow mb-2">
+                                        Lorem ipsum dolor sit amet.
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="gallery-cell learn-list">
+                                <a href="##">
+                                    <div class="card shadow mb-2">
+                                        Lorem ipsum dolor sit amet.
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header col-xl-5 col-lg-12">
+                    <div class="name">
+                        <h3>User 同學，歡迎回來。</h3>
+                    </div>
+                    <div class="information ">
+                        <div class="class-intro">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad facilis fuga atque aliquid
+                            sequi vitae facere cumque quam nam odit quia porro, maiores autem, animi sint, adipisci
+                            voluptate placeat impedit?
+                        </div>
+                        <div class="class-detail">
+                            <div class="header">
+                                <p>課程目標</p>
+                                <p>3節</p>
+                            </div>
+                            <div class="list">
+                                <div class="item">
+                                    <img src="https://picsum.photos/30/30/?random=1">
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inform inform-a">Lorem, ipsum dolor.</div>
+                    </div>
+                </div>
 
-    <div class="container-fluid learn shadow">
-        <div class="container"></div>
+            </div>
+        </div>
     </div>
+    <!-- 1.PPT 
+                     2.課程列表
+                     3.information
+                     4. -->
 
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://kit.fontawesome.com/5721fcdafd.js" crossorigin="anonymous"></script> -->
     <script src="js/fontawsome.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-    <!-- <script src="js/autosize.min.js"></script> -->
+    <!-- <script src="js/autosize.min.js"></script>-->
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>
     <script src="js/main1.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive('resize', function () {
+            return function (scope) {
+                var w = $(window);
+                scope.getw = function () {
+                    return {
+                        'w': w.width()
+                    };
+                };
+                scope.$watch(scope.getw, function () {
+                    var ww = w.width();
+                    if (ww > 1300)
+                        scope.width = 800;
+                    else if (ww > 992)
+                        scope.width = ww * 0.5;
+                    else
+                        scope.width = ww - 30;
+                }, true);
+
+                w.bind('resize', function () {
+                    scope.$apply();
+                });
+            }
+        })
+    </script>
 </body>
 
 </html>
