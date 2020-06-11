@@ -801,6 +801,11 @@ a:focus {
                         font-size: 18px;
                     }
 
+                    .sender-mail {
+                        font-size: 16px;
+                        color: #888;
+                    }
+
                     .fa-2x,
                     .fa-lg {
                         display: flex;
@@ -817,6 +822,7 @@ a:focus {
                 }
 
                 @media screen and (max-width:768px) {
+
                     .subject {
                         h3 {
                             font-size: 20px;
@@ -824,6 +830,8 @@ a:focus {
                     }
 
                     .header {
+                        padding: 0px 2px;
+
                         p {
                             font-size: 18px;
                         }
@@ -835,6 +843,10 @@ a:focus {
 
                     .context {
                         font-size: 16px;
+                    }
+
+                    .sender-mail {
+                        font-size: 12px !important;
                     }
                 }
             }

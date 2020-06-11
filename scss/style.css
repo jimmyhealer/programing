@@ -798,6 +798,11 @@ a:focus {
   font-size: 18px;
 }
 
+.blog-area .single-blog-area .mailbox .mail-show .header .sender-mail {
+  font-size: 16px;
+  color: #888;
+}
+
 .blog-area .single-blog-area .mailbox .mail-show .header .fa-2x,
 .blog-area .single-blog-area .mailbox .mail-show .header .fa-lg {
   display: -webkit-box;
@@ -818,6 +823,9 @@ a:focus {
   .blog-area .single-blog-area .mailbox .mail-show .subject h3 {
     font-size: 20px;
   }
+  .blog-area .single-blog-area .mailbox .mail-show .header {
+    padding: 0px 2px;
+  }
   .blog-area .single-blog-area .mailbox .mail-show .header p {
     font-size: 18px;
   }
@@ -826,6 +834,9 @@ a:focus {
   }
   .blog-area .single-blog-area .mailbox .mail-show .context {
     font-size: 16px;
+  }
+  .blog-area .single-blog-area .mailbox .mail-show .sender-mail {
+    font-size: 12px !important;
   }
 }
 

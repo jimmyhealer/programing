@@ -316,9 +316,10 @@
                                             ng-src='{{mail.senderPhotoURL}}'>
                                         <div class="db mr-auto">
                                             <p>{{mail.sender}}</p>
-                                            <p style="font-size: 16px;color: #888;">({{mail.senderMail}})</p>
+                                            <p class="sender-mail">({{mail.senderMail}})</p>
                                         </div>
-                                        <p class="ml-auto date">{{mail.date.toDate() | date:'yyyy/MM/dd'}}</p>
+                                        <p class="ml-auto mt-auto mb-auto date">
+                                            {{mail.date.toDate() | date:'yyyy/MM/dd'}}</p>
                                         <!-- <i class="fa fa-reply fa-lg fa-2x"></i> -->
                                         <div ng-click="mailRemove(1)" class="show-icon" title="刪除"><i
                                                 class="fa fa-trash-alt fa-2x"></i></div>
