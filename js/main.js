@@ -258,7 +258,7 @@ function showprofile(i) {
     var be = $("div[name='pf']:visible");
     be.hide();
     $("#pf_" + i).show();
-    window.history.pushState({}, 0, 'http://' + window.location.host + window.location.pathname + '?' + i);
+    window.history.pushState({}, 0, window.location.origin + window.location.pathname + '?' + i);
 }
 
 
